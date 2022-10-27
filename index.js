@@ -1,2 +1,8 @@
-let other = require("./other");
-console.log(other(100, 15));
+let event = require("events");
+let eventEmitter = new event.EventEmitter();
+
+eventEmitter.on("speak", (name) => {
+  console.log(`${name} is speaking`);
+});
+
+eventEmitter.emit("speak", "Akshu");
